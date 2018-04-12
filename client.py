@@ -5,13 +5,13 @@ s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 # Define the port on which you want to connect
 
-HOST = '127.0.0.1' #input("Enter HOST: ")
-PORT = 1234 #input("Enter port: ")
+HOST = input("Enter HOST (e.g. 127.0.0.1): ")
+PORT = input("Enter port (e.g. 1234): ")
 RECV_BUFFER = 1024
 
 # connect to the server on local computer
-s.connect((HOST, PORT))
-print ("Connected to the host: %s, port is: %d" %(HOST, PORT) )
+s.connect((HOST, int(PORT)))
+print ("Connected to the host: %s, port is: %s" %(HOST, PORT) )
 attempts = input("Enter quantity of attempts: ")
 seq_num = 0
 while seq_num != int(attempts):
